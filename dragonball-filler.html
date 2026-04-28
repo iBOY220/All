@@ -296,21 +296,32 @@ function applyF(){
   });
 }
 
-// Save & restore position
+
+// Position memory
 var STORE_KEY = 'dragonball';
 function savePos() {
-  try { localStorage.setItem(STORE_KEY, JSON.stringify({s: cS, f: cF})); } catch(e) {}
+  try {
+    var d = JSON.stringify({s: cS, f: cF});
+    localStorage.setItem(STORE_KEY, d);
+  } catch(e) {}
 }
 function restorePos() {
   try {
     var d = JSON.parse(localStorage.getItem(STORE_KEY) || 'null');
     if (!d) return;
-    if (d.s && document.getElementById(d.s)) showS(d.s);
-    if (d.f && d.f !== 'All') setF(d.f);
+    if (d.s && document.getElementById(d.s)) {
+      showS(d.s);
+    }
+    if (d.f && d.f !== 'All') {
+      setF(d.f);
+    }
   } catch(e) {}
 }
+document.addEventListener('DOMContentLoaded', function() {
+  restorePos();
+});
+window.addEventListener('pagehide', savePos);
 window.addEventListener('beforeunload', savePos);
-restorePos();
 </script>
 </body>
 </html>
