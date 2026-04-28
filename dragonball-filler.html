@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>Dragon Ball Filler Guide</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+:root{--bg:#0d1117;--sf:#161b22;--br:#21262d;--tx:#e6edf3;--mu:#7d8590;--ac:#f97316;--ca:#22c55e;--fi:#ef4444;--mi:#f59e0b}
+html,body{height:100%;display:flex;flex-direction:column}
+body{background:var(--bg);color:var(--tx);font-family:-apple-system,"Helvetica Neue",sans-serif}
+#hdr{flex-shrink:0;background:var(--sf);border-bottom:1px solid var(--br);padding:12px 16px 10px}
+.ht{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.logo{width:34px;height:34px;border-radius:8px;background:linear-gradient(135deg,#f97316,#fbbf24);display:flex;align-items:center;justify-content:center;font-size:17px;font-weight:900;color:#fff;flex-shrink:0}
+.ttl{font-size:16px;font-weight:700}.sub{font-size:11px;color:var(--mu);margin-top:1px}
+.ts{margin-left:auto;display:flex;gap:8px;font-size:11px;color:var(--mu)}
+.ts b{font-weight:700}
+.flt{display:flex;gap:6px;overflow-x:auto;padding-bottom:2px}
+.flt::-webkit-scrollbar{display:none}
+.fb2{flex-shrink:0;padding:5px 14px;border-radius:20px;border:none;font-size:12px;font-weight:600;cursor:pointer;background:var(--br);color:var(--mu)}
+.faA{background:var(--ac)!important;color:#000!important}
+.faC{background:var(--ca)!important;color:#000!important}
+.faF{background:var(--fi)!important;color:#fff!important}
+.faM{background:var(--mi)!important;color:#000!important}
+#wrap{display:flex;flex:1;min-height:0;overflow:hidden}
+#sb{width:62px;flex-shrink:0;background:var(--sf);border-right:1px solid var(--br);overflow-y:auto;display:flex;flex-direction:column;gap:2px;padding:6px 3px;-webkit-overflow-scrolling:touch}
+#sb::-webkit-scrollbar{display:none}
+.sb{display:flex;flex-direction:column;align-items:center;padding:7px 2px;border-radius:6px;border:none;cursor:pointer;background:transparent;color:var(--mu);font-size:11px;font-weight:700;width:100%;text-align:center;line-height:1.2}
+.sb.active{background:rgba(249,115,22,0.15);color:var(--ac);outline:1px solid rgba(249,115,22,0.35)}
+.fp{font-size:9px;font-weight:700;margin-top:2px}
+.fh{color:var(--fi)}.fm{color:var(--mi)}.fl{color:var(--ca)}
+#mn{flex:1;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;padding:14px 12px}
+.sh{display:flex;align-items:center;gap:8px;margin-bottom:12px;flex-wrap:wrap}
+.st{font-size:16px;font-weight:700}.sy{font-size:12px;color:var(--mu)}
+.ec{font-size:12px;color:var(--mu);margin-left:auto}
+table{width:100%;border-collapse:collapse;font-size:12px}
+thead tr{border-bottom:1px solid var(--br)}
+th{padding:7px 8px;text-align:left;color:var(--mu);font-size:10px;font-weight:600;letter-spacing:.05em;white-space:nowrap}
+td{padding:8px 8px;border-bottom:1px solid rgba(33,38,45,.5);vertical-align:middle}
+.n{color:var(--mu);white-space:nowrap;font-variant-numeric:tabular-nums}
+.et{color:var(--tx);line-height:1.4}.etf{color:var(--mu);line-height:1.4}
+.b{display:inline-block;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:700;white-space:nowrap}
+.bc{background:rgba(34,197,94,.12);color:var(--ca);border:1px solid rgba(34,197,94,.25)}
+.bf{background:rgba(239,68,68,.12);color:var(--fi);border:1px solid rgba(239,68,68,.25)}
+.bm{background:rgba(245,158,11,.12);color:var(--mi);border:1px solid rgba(245,158,11,.25)}
+tr.hidden{display:none}
+</style>
+</head>
+<body>
+<div id="hdr">
+<div class="ht">
+  <div class="logo">龍</div>
+  <div><div class="ttl">Dragon Ball</div><div class="sub">Filler Guide &middot; 153 Episodes &middot; 1986–1989</div></div>
+  <div class="ts">
+    <span><b style="color:#22c55e">129</b> Canon</span>
+    <span><b style="color:#ef4444">21</b> Filler</span>
+    <span><b style="color:#f59e0b">3</b> Mixed</span>
+  </div>
+</div>
+<div class="flt">
+  <button class="fb2 faA" id="btnA" onclick="setF('All')">All</button>
+  <button class="fb2" id="btnC" onclick="setF('Canon')">Canon</button>
+  <button class="fb2" id="btnF" onclick="setF('Filler')">Filler</button>
+  <button class="fb2" id="btnM" onclick="setF('Mixed')">Mixed</button>
+</div>
+</div>
+<div id="wrap">
+<div id="sb">
+<button class="sb active" onclick="showS(1)" title="World Tournament Arc 1986 0% filler"><span>S1</span><span class="fp fl">0%</span></button>
+<button class="sb" onclick="showS(2)" title="Red Ribbon Army Arc 1986-1987 16% filler"><span>S2</span><span class="fp fl">16%</span></button>
+<button class="sb" onclick="showS(3)" title="General Blue Arc 1987 0% filler"><span>S3</span><span class="fp fl">0%</span></button>
+<button class="sb" onclick="showS(4)" title="Korin Tower Arc 1987 19% filler"><span>S4</span><span class="fp fl">19%</span></button>
+<button class="sb" onclick="showS(5)" title="22nd World Tournament Arc 1987-1988 0% filler"><span>S5</span><span class="fp fl">0%</span></button>
+<button class="sb" onclick="showS(6)" title="King Piccolo Arc 1988 0% filler"><span>S6</span><span class="fp fl">0%</span></button>
+<button class="sb" onclick="showS(7)" title="Training Arc (Filler) 1988 100% filler"><span>S7</span><span class="fp fh">100%</span></button>
+<button class="sb" onclick="showS(8)" title="23rd World Tournament Arc 1988-1989 24% filler"><span>S8</span><span class="fp fl">24%</span></button>
+</div>
+<div id="mn">
+<div id="s1" class="panel" style="display:block">
+<div class="sh"><span class="st">World Tournament Arc</span><span class="sy">1986</span><span class="fb" style="color:#22c55e;background:rgba(34,197,94,0.12);padding:2px 9px;border-radius:10px">0% Filler</span><span class="ec">13 eps</span></div>
+<table><thead><tr><th>#</th><th>Ep</th><th>Title</th><th>Type</th></tr></thead><tbody id="tb1"><tr data-t="Canon" style=""><td class="n">1</td><td class="n">1</td><td><span class="et">The Secret of the Dragon Balls</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style="background:rgba(22,27,34,0.4);"><td class="n">2</td><td class="n">2</td><td><span class="et">The Emperor&#x27;s Quest</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style=""><td class="n">3</td><td class="n">3</td><td><span class="et">The Nimbus Cloud of Roshi</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style="background:rgba(22,27,34,0.4);"><td class="n">4</td><td class="n">4</td><td><span class="et">Oolong the Terrible</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style=""><td class="n">5</td><td class="n">5</td><td><span class="et">Yamcha the Desert Bandit</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style="background:rgba(22,27,34,0.4);"><td class="n">6</td><td class="n">6</td><td><span class="et">Keep an Eye on the Dragon Balls</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style=""><td class="n">7</td><td class="n">7</td><td><span class="et">The Ox King on Fire Mountain</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style="background:rgba(22,27,34,0.4);"><td class="n">8</td><td class="n">8</td><td><span class="et">The Kamehameha Wave</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style=""><td class="n">9</td><td class="n">9</td><td><span class="et">Boss Rabbit&#x27;s Magic Touch</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style="background:rgba(22,27,34,0.4);"><td class="n">10</td><td class="n">10</td><td><span class="et">The Dragon Balls are Stolen!</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style=""><td class="n">11</td><td class="n">11</td><td><span class="et">The Penalty is Pinball</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style="background:rgba(22,27,34,0.4);"><td class="n">12</td><td class="n">12</td><td><span class="et">A Wish to the Eternal Dragon</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style=""><td class="n">13</td><td class="n">13</td><td><span class="et">The Legend of Goku</span></td><td><span class="b bc">Canon</span></td></tr>
+</tbody></table>
+</div>
+<div id="s2" class="panel" style="display:none">
+<div class="sh"><span class="st">Red Ribbon Army Arc</span><span class="sy">1986-1987</span><span class="fb" style="color:#22c55e;background:rgba(34,197,94,0.12);padding:2px 9px;border-radius:10px">16% Filler</span><span class="ec">32 eps</span></div>
+<table><thead><tr><th>#</th><th>Ep</th><th>Title</th><th>Type</th></tr></thead><tbody id="tb2"><tr data-t="Canon" style=""><td class="n">1</td><td class="n">14</td><td><span class="et">Goku&#x27;s Rival</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style="background:rgba(22,27,34,0.4);"><td class="n">2</td><td class="n">15</td><td><span class="et">Look Out for Launch</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style=""><td class="n">3</td><td class="n">16</td><td><span class="et">Find That Stone!</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style="background:rgba(22,27,34,0.4);"><td class="n">4</td><td class="n">17</td><td><span class="et">Milk Delivery</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style=""><td class="n">5</td><td class="n">18</td><td><span class="et">The Turtle Hermit Way</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style="background:rgba(22,27,34,0.4);"><td class="n">6</td><td class="n">19</td><td><span class="et">The Tournament Begins</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style=""><td class="n">7</td><td class="n">20</td><td><span class="et">Elimination Round</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style="background:rgba(22,27,34,0.4);"><td class="n">8</td><td class="n">21</td><td><span class="et">Smells Like Trouble</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style=""><td class="n">9</td><td class="n">22</td><td><span class="et">Quarterfinals Begin</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style="background:rgba(22,27,34,0.4);"><td class="n">10</td><td class="n">23</td><td><span class="et">Monster Beast Giran</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style=""><td class="n">11</td><td class="n">24</td><td><span class="et">Krillin&#x27;s Frantic Attack!</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style="background:rgba(22,27,34,0.4);"><td class="n">12</td><td class="n">25</td><td><span class="et">Danger From Above</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style=""><td class="n">13</td><td class="n">26</td><td><span class="et">The Grand Finals</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style="background:rgba(22,27,34,0.4);"><td class="n">14</td><td class="n">27</td><td><span class="et">Number One Under the Moon?</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style=""><td class="n">15</td><td class="n">28</td><td><span class="et">The Final Blow</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Mixed" style="background:rgba(22,27,34,0.4);"><td class="n">16</td><td class="n">29</td><td><span class="et">The Roaming Lake</span></td><td><span class="b bm">Mixed</span></td></tr>
+<tr data-t="Filler" style=""><td class="n">17</td><td class="n">30</td><td><span class="etf">Pilaf and the Mystery Force</span></td><td><span class="b bf">Filler</span></td></tr>
+<tr data-t="Filler" style="background:rgba(22,27,34,0.4);"><td class="n">18</td><td class="n">31</td><td><span class="etf">Wedding Plans?</span></td><td><span class="b bf">Filler</span></td></tr>
+<tr data-t="Filler" style=""><td class="n">19</td><td class="n">32</td><td><span class="etf">The Flying Fortress - Vanished!</span></td><td><span class="b bf">Filler</span></td></tr>
+<tr data-t="Filler" style="background:rgba(22,27,34,0.4);"><td class="n">20</td><td class="n">33</td><td><span class="etf">The Legend of a Dragon</span></td><td><span class="b bf">Filler</span></td></tr>
+<tr data-t="Canon" style=""><td class="n">21</td><td class="n">34</td><td><span class="et">Cruel General Red</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style="background:rgba(22,27,34,0.4);"><td class="n">22</td><td class="n">35</td><td><span class="et">Cold Reception</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style=""><td class="n">23</td><td class="n">36</td><td><span class="et">Major Metallitron</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style="background:rgba(22,27,34,0.4);"><td class="n">24</td><td class="n">37</td><td><span class="et">Ninja Murasaki is Coming!</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style=""><td class="n">25</td><td class="n">38</td><td><span class="et">Five Murasakis</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style="background:rgba(22,27,34,0.4);"><td class="n">26</td><td class="n">39</td><td><span class="et">Mysterious Android No. 8</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style=""><td class="n">27</td><td class="n">40</td><td><span class="et">Horrifying Buyon</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style="background:rgba(22,27,34,0.4);"><td class="n">28</td><td class="n">41</td><td><span class="et">The Fall of Muscle Tower</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Mixed" style=""><td class="n">29</td><td class="n">42</td><td><span class="et">The Secret of Dr. Flappe</span></td><td><span class="b bm">Mixed</span></td></tr>
+<tr data-t="Canon" style="background:rgba(22,27,34,0.4);"><td class="n">30</td><td class="n">43</td><td><span class="et">A Trip to the City</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Mixed" style=""><td class="n">31</td><td class="n">44</td><td><span class="et">Master Thief, Hasky</span></td><td><span class="b bm">Mixed</span></td></tr>
+<tr data-t="Filler" style="background:rgba(22,27,34,0.4);"><td class="n">32</td><td class="n">45</td><td><span class="etf">Danger in the Air</span></td><td><span class="b bf">Filler</span></td></tr>
+</tbody></table>
+</div>
+<div id="s3" class="panel" style="display:none">
+<div class="sh"><span class="st">General Blue Arc</span><span class="sy">1987</span><span class="fb" style="color:#22c55e;background:rgba(34,197,94,0.12);padding:2px 9px;border-radius:10px">0% Filler</span><span class="ec">12 eps</span></div>
+<table><thead><tr><th>#</th><th>Ep</th><th>Title</th><th>Type</th></tr></thead><tbody id="tb3"><tr data-t="Canon" style=""><td class="n">1</td><td class="n">46</td><td><span class="et">Bulma&#x27;s Bad Day</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style="background:rgba(22,27,34,0.4);"><td class="n">2</td><td class="n">47</td><td><span class="et">Kame House - Found!</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style=""><td class="n">3</td><td class="n">48</td><td><span class="et">Deep Blue Sea</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style="background:rgba(22,27,34,0.4);"><td class="n">4</td><td class="n">49</td><td><span class="et">Roshi Surprise</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style=""><td class="n">5</td><td class="n">50</td><td><span class="et">The Trap is Sprung!</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style="background:rgba(22,27,34,0.4);"><td class="n">6</td><td class="n">51</td><td><span class="et">Beware of Robot</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style=""><td class="n">7</td><td class="n">52</td><td><span class="et">The Pirate Treasure</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style="background:rgba(22,27,34,0.4);"><td class="n">8</td><td class="n">53</td><td><span class="et">Blue, Black and Blue</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style=""><td class="n">9</td><td class="n">54</td><td><span class="et">Escape From Pirate Cave</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style="background:rgba(22,27,34,0.4);"><td class="n">10</td><td class="n">55</td><td><span class="et">Penguin Village</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style=""><td class="n">11</td><td class="n">56</td><td><span class="et">Strange Visitor</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style="background:rgba(22,27,34,0.4);"><td class="n">12</td><td class="n">57</td><td><span class="et">Arale vs. Blue</span></td><td><span class="b bc">Canon</span></td></tr>
+</tbody></table>
+</div>
+<div id="s4" class="panel" style="display:none">
+<div class="sh"><span class="st">Korin Tower Arc</span><span class="sy">1987</span><span class="fb" style="color:#22c55e;background:rgba(34,197,94,0.12);padding:2px 9px;border-radius:10px">19% Filler</span><span class="ec">26 eps</span></div>
+<table><thead><tr><th>#</th><th>Ep</th><th>Title</th><th>Type</th></tr></thead><tbody id="tb4"><tr data-t="Canon" style=""><td class="n">1</td><td class="n">58</td><td><span class="et">The Land of Korin</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style="background:rgba(22,27,34,0.4);"><td class="n">2</td><td class="n">59</td><td><span class="et">The Notorious Mercenary</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style=""><td class="n">3</td><td class="n">60</td><td><span class="et">Tao Attacks!</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style="background:rgba(22,27,34,0.4);"><td class="n">4</td><td class="n">61</td><td><span class="et">Korin Tower</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style=""><td class="n">5</td><td class="n">62</td><td><span class="et">Sacred Water</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style="background:rgba(22,27,34,0.4);"><td class="n">6</td><td class="n">63</td><td><span class="et">The Return of Goku</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style=""><td class="n">7</td><td class="n">64</td><td><span class="et">The Last of Mercenary Tao</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style="background:rgba(22,27,34,0.4);"><td class="n">8</td><td class="n">65</td><td><span class="et">Confront the Red Ribbon Army</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style=""><td class="n">9</td><td class="n">66</td><td><span class="et">A Real Bind</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style="background:rgba(22,27,34,0.4);"><td class="n">10</td><td class="n">67</td><td><span class="et">The End of Commander Red</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style=""><td class="n">11</td><td class="n">68</td><td><span class="et">The Last Dragon Ball</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style="background:rgba(22,27,34,0.4);"><td class="n">12</td><td class="n">69</td><td><span class="et">Who is Fortuneteller Baba?</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style=""><td class="n">13</td><td class="n">70</td><td><span class="et">We Are the Five Warriors</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style="background:rgba(22,27,34,0.4);"><td class="n">14</td><td class="n">71</td><td><span class="et">Deadly Battle</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style=""><td class="n">15</td><td class="n">72</td><td><span class="et">Goku&#x27;s Turn</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style="background:rgba(22,27,34,0.4);"><td class="n">16</td><td class="n">73</td><td><span class="et">The Devilmite Beam</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style=""><td class="n">17</td><td class="n">74</td><td><span class="et">The Mysterious Fifth Man</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style="background:rgba(22,27,34,0.4);"><td class="n">18</td><td class="n">75</td><td><span class="et">The Strong Ones</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style=""><td class="n">19</td><td class="n">76</td><td><span class="et">True Colors of the Masked Man</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style="background:rgba(22,27,34,0.4);"><td class="n">20</td><td class="n">77</td><td><span class="et">Pilaf&#x27;s Tactics</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style=""><td class="n">21</td><td class="n">78</td><td><span class="et">The Eternal Dragon Rises</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Filler" style="background:rgba(22,27,34,0.4);"><td class="n">22</td><td class="n">79</td><td><span class="etf">Terror and Plague</span></td><td><span class="b bf">Filler</span></td></tr>
+<tr data-t="Filler" style=""><td class="n">23</td><td class="n">80</td><td><span class="etf">Goku vs. Sky Dragon</span></td><td><span class="b bf">Filler</span></td></tr>
+<tr data-t="Filler" style="background:rgba(22,27,34,0.4);"><td class="n">24</td><td class="n">81</td><td><span class="etf">Goku Goes to Demon Land</span></td><td><span class="b bf">Filler</span></td></tr>
+<tr data-t="Filler" style=""><td class="n">25</td><td class="n">82</td><td><span class="etf">The Rampage of InoShikaCho</span></td><td><span class="b bf">Filler</span></td></tr>
+<tr data-t="Filler" style="background:rgba(22,27,34,0.4);"><td class="n">26</td><td class="n">83</td><td><span class="etf">Which Way To Papaya Island?</span></td><td><span class="b bf">Filler</span></td></tr>
+</tbody></table>
+</div>
+<div id="s5" class="panel" style="display:none">
+<div class="sh"><span class="st">22nd World Tournament Arc</span><span class="sy">1987-1988</span><span class="fb" style="color:#22c55e;background:rgba(34,197,94,0.12);padding:2px 9px;border-radius:10px">0% Filler</span><span class="ec">18 eps</span></div>
+<table><thead><tr><th>#</th><th>Ep</th><th>Title</th><th>Type</th></tr></thead><tbody id="tb5"><tr data-t="Canon" style=""><td class="n">1</td><td class="n">84</td><td><span class="et">Rivals and Arrivals</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style="background:rgba(22,27,34,0.4);"><td class="n">2</td><td class="n">85</td><td><span class="et">Preliminary Peril</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style=""><td class="n">3</td><td class="n">86</td><td><span class="et">Then There Were Eight</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style="background:rgba(22,27,34,0.4);"><td class="n">4</td><td class="n">87</td><td><span class="et">Yamcha vs. Tien</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style=""><td class="n">5</td><td class="n">88</td><td><span class="et">Yamcha&#x27;s Big Break</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style="background:rgba(22,27,34,0.4);"><td class="n">6</td><td class="n">89</td><td><span class="et">Full-Moon Vengeance</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style=""><td class="n">7</td><td class="n">90</td><td><span class="et">The Dodon Wave</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style="background:rgba(22,27,34,0.4);"><td class="n">8</td><td class="n">91</td><td><span class="et">Counting Controversy!!</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style=""><td class="n">9</td><td class="n">92</td><td><span class="et">Goku Enters the Ring</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style="background:rgba(22,27,34,0.4);"><td class="n">10</td><td class="n">93</td><td><span class="et">Tien Shinhan vs. Jackie Chun</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style=""><td class="n">11</td><td class="n">94</td><td><span class="et">Stepping Down</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style="background:rgba(22,27,34,0.4);"><td class="n">12</td><td class="n">95</td><td><span class="et">Goku vs. Krillin</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style=""><td class="n">13</td><td class="n">96</td><td><span class="et">Tail&#x27;s Tale</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style="background:rgba(22,27,34,0.4);"><td class="n">14</td><td class="n">97</td><td><span class="et">Final Match: Goku vs. Tien</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style=""><td class="n">15</td><td class="n">98</td><td><span class="et">Victory&#x27;s Edge</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style="background:rgba(22,27,34,0.4);"><td class="n">16</td><td class="n">99</td><td><span class="et">Tien&#x27;s Insurrection</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style=""><td class="n">17</td><td class="n">100</td><td><span class="et">The Spirit Cannon</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style="background:rgba(22,27,34,0.4);"><td class="n">18</td><td class="n">101</td><td><span class="et">The Fallen</span></td><td><span class="b bc">Canon</span></td></tr>
+</tbody></table>
+</div>
+<div id="s6" class="panel" style="display:none">
+<div class="sh"><span class="st">King Piccolo Arc</span><span class="sy">1988</span><span class="fb" style="color:#22c55e;background:rgba(34,197,94,0.12);padding:2px 9px;border-radius:10px">0% Filler</span><span class="ec">25 eps</span></div>
+<table><thead><tr><th>#</th><th>Ep</th><th>Title</th><th>Type</th></tr></thead><tbody id="tb6"><tr data-t="Canon" style=""><td class="n">1</td><td class="n">102</td><td><span class="et">Enter King Piccolo</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style="background:rgba(22,27,34,0.4);"><td class="n">2</td><td class="n">103</td><td><span class="et">Tambourine Attacks!</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style=""><td class="n">3</td><td class="n">104</td><td><span class="et">Mark of the Demon</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style="background:rgba(22,27,34,0.4);"><td class="n">4</td><td class="n">105</td><td><span class="et">Here Comes Yajirobe</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style=""><td class="n">5</td><td class="n">106</td><td><span class="et">Terrible Tambourine</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style="background:rgba(22,27,34,0.4);"><td class="n">6</td><td class="n">107</td><td><span class="et">Tien&#x27;s Atonement</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style=""><td class="n">7</td><td class="n">108</td><td><span class="et">Goku&#x27;s Revenge</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style="background:rgba(22,27,34,0.4);"><td class="n">8</td><td class="n">109</td><td><span class="et">Goku vs. King Piccolo</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style=""><td class="n">9</td><td class="n">110</td><td><span class="et">Piccolo Closes In</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style="background:rgba(22,27,34,0.4);"><td class="n">10</td><td class="n">111</td><td><span class="et">Roshi&#x27;s Gambit</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style=""><td class="n">11</td><td class="n">112</td><td><span class="et">King Piccolo&#x27;s Wish</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style="background:rgba(22,27,34,0.4);"><td class="n">12</td><td class="n">113</td><td><span class="et">Siege on Chow Castle</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style=""><td class="n">13</td><td class="n">114</td><td><span class="et">Conquest and Power</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style="background:rgba(22,27,34,0.4);"><td class="n">14</td><td class="n">115</td><td><span class="et">Awaken Darkness</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style=""><td class="n">15</td><td class="n">116</td><td><span class="et">A Taste of Destiny</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style="background:rgba(22,27,34,0.4);"><td class="n">16</td><td class="n">117</td><td><span class="et">The Ultimate Sacrifice</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style=""><td class="n">17</td><td class="n">118</td><td><span class="et">Prelude to Vengeance</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style="background:rgba(22,27,34,0.4);"><td class="n">18</td><td class="n">119</td><td><span class="et">Battle Cry</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style=""><td class="n">19</td><td class="n">120</td><td><span class="et">Goku Strikes Back</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style="background:rgba(22,27,34,0.4);"><td class="n">20</td><td class="n">121</td><td><span class="et">The Biggest Crisis</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style=""><td class="n">21</td><td class="n">122</td><td><span class="et">Final Showdown</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style="background:rgba(22,27,34,0.4);"><td class="n">22</td><td class="n">123</td><td><span class="et">Lost and Found</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style=""><td class="n">23</td><td class="n">124</td><td><span class="et">Temple Above the Clouds</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style="background:rgba(22,27,34,0.4);"><td class="n">24</td><td class="n">125</td><td><span class="et">Earth&#x27;s Guardian Emerges</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style=""><td class="n">25</td><td class="n">126</td><td><span class="et">Eternal Dragon Resurrected</span></td><td><span class="b bc">Canon</span></td></tr>
+</tbody></table>
+</div>
+<div id="s7" class="panel" style="display:none">
+<div class="sh"><span class="st">Training Arc (Filler)</span><span class="sy">1988</span><span class="fb" style="color:#ef4444;background:rgba(239,68,68,0.12);padding:2px 9px;border-radius:10px">100% Filler</span><span class="ec">6 eps</span></div>
+<table><thead><tr><th>#</th><th>Ep</th><th>Title</th><th>Type</th></tr></thead><tbody id="tb7"><tr data-t="Filler" style=""><td class="n">1</td><td class="n">127</td><td><span class="etf">Quicker than Lightning</span></td><td><span class="b bf">Filler</span></td></tr>
+<tr data-t="Filler" style="background:rgba(22,27,34,0.4);"><td class="n">2</td><td class="n">128</td><td><span class="etf">Secret of the Woods</span></td><td><span class="b bf">Filler</span></td></tr>
+<tr data-t="Filler" style=""><td class="n">3</td><td class="n">129</td><td><span class="etf">The Time Room</span></td><td><span class="b bf">Filler</span></td></tr>
+<tr data-t="Filler" style="background:rgba(22,27,34,0.4);"><td class="n">4</td><td class="n">130</td><td><span class="etf">Goku&#x27;s Doll</span></td><td><span class="b bf">Filler</span></td></tr>
+<tr data-t="Filler" style=""><td class="n">5</td><td class="n">131</td><td><span class="etf">Walking Their Own Ways</span></td><td><span class="b bf">Filler</span></td></tr>
+<tr data-t="Filler" style="background:rgba(22,27,34,0.4);"><td class="n">6</td><td class="n">132</td><td><span class="etf">Hotter than Lava</span></td><td><span class="b bf">Filler</span></td></tr>
+</tbody></table>
+</div>
+<div id="s8" class="panel" style="display:none">
+<div class="sh"><span class="st">23rd World Tournament Arc</span><span class="sy">1988-1989</span><span class="fb" style="color:#22c55e;background:rgba(34,197,94,0.12);padding:2px 9px;border-radius:10px">24% Filler</span><span class="ec">21 eps</span></div>
+<table><thead><tr><th>#</th><th>Ep</th><th>Title</th><th>Type</th></tr></thead><tbody id="tb8"><tr data-t="Canon" style=""><td class="n">1</td><td class="n">133</td><td><span class="et">Changes</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style="background:rgba(22,27,34,0.4);"><td class="n">2</td><td class="n">134</td><td><span class="et">Preliminary Peril</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style=""><td class="n">3</td><td class="n">135</td><td><span class="et">Battle of the Eight</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style="background:rgba(22,27,34,0.4);"><td class="n">4</td><td class="n">136</td><td><span class="et">Tien Shinhan vs. Mercenary Tao</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style=""><td class="n">5</td><td class="n">137</td><td><span class="et">Anonymous Proposal</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style="background:rgba(22,27,34,0.4);"><td class="n">6</td><td class="n">138</td><td><span class="et">The Mysterious Hero</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style=""><td class="n">7</td><td class="n">139</td><td><span class="et">Rematch</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style="background:rgba(22,27,34,0.4);"><td class="n">8</td><td class="n">140</td><td><span class="et">Goku Gains Speed</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style=""><td class="n">9</td><td class="n">141</td><td><span class="et">The Four Faces of Tien</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style="background:rgba(22,27,34,0.4);"><td class="n">10</td><td class="n">142</td><td><span class="et">Kami vs. Piccolo</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style=""><td class="n">11</td><td class="n">143</td><td><span class="et">Battle for the Future</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style="background:rgba(22,27,34,0.4);"><td class="n">12</td><td class="n">144</td><td><span class="et">Super Kamehameha</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style=""><td class="n">13</td><td class="n">145</td><td><span class="et">Junior No More</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style="background:rgba(22,27,34,0.4);"><td class="n">14</td><td class="n">146</td><td><span class="et">Goku&#x27;s Trap</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style=""><td class="n">15</td><td class="n">147</td><td><span class="et">Goku Hangs On</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Canon" style="background:rgba(22,27,34,0.4);"><td class="n">16</td><td class="n">148</td><td><span class="et">The Victor</span></td><td><span class="b bc">Canon</span></td></tr>
+<tr data-t="Filler" style=""><td class="n">17</td><td class="n">149</td><td><span class="etf">Dress in Flames</span></td><td><span class="b bf">Filler</span></td></tr>
+<tr data-t="Filler" style="background:rgba(22,27,34,0.4);"><td class="n">18</td><td class="n">150</td><td><span class="etf">The Fire-Eater</span></td><td><span class="b bf">Filler</span></td></tr>
+<tr data-t="Filler" style=""><td class="n">19</td><td class="n">151</td><td><span class="etf">Outrageous Octagon</span></td><td><span class="b bf">Filler</span></td></tr>
+<tr data-t="Filler" style="background:rgba(22,27,34,0.4);"><td class="n">20</td><td class="n">152</td><td><span class="etf">Mystery of the Dark World</span></td><td><span class="b bf">Filler</span></td></tr>
+<tr data-t="Filler" style=""><td class="n">21</td><td class="n">153</td><td><span class="etf">The End, The Beginning</span></td><td><span class="b bf">Filler</span></td></tr>
+</tbody></table>
+</div>
+</div>
+</div>
+<script>
+var cS=1,cF='All';
+function showS(n){
+  document.getElementById('s'+cS).style.display='none';
+  document.querySelectorAll('.sb').forEach(function(b){b.classList.remove('active')});
+  cS=n;
+  document.getElementById('s'+n).style.display='block';
+  document.querySelectorAll('.sb')[n-1].classList.add('active');
+  document.getElementById('mn').scrollTop=0;
+  applyF();
+}
+function setF(f){
+  cF=f;
+  document.getElementById('btnA').className='fb2'+(f=='All'?' faA':'');
+  document.getElementById('btnC').className='fb2'+(f=='Canon'?' faC':'');
+  document.getElementById('btnF').className='fb2'+(f=='Filler'?' faF':'');
+  document.getElementById('btnM').className='fb2'+(f=='Mixed'?' faM':'');
+  applyF();
+}
+function applyF(){
+  document.querySelectorAll('#tb'+cS+' tr').forEach(function(r){
+    r.classList.toggle('hidden', cF!=='All' && r.getAttribute('data-t')!==cF);
+  });
+}
+</script>
+</body>
+</html>
