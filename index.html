@@ -102,11 +102,12 @@
   .card:active::before { opacity: 1; }
 
   /* Glow per card */
-  .card-conan  { --glow: rgba(88,166,255,0.2); --accent: #58a6ff; }
-  .card-op     { --glow: rgba(245,158,11,0.2); --accent: #f59e0b; }
-  .card-naruto { --glow: rgba(249,115,22,0.2); --accent: #f97316; }
-  .card-db     { --glow: rgba(239,68,68,0.2);  --accent: #ef4444; }
-  .card-bc     { --glow: rgba(168,85,247,0.2); --accent: #a855f7; }
+  .card-conan   { --glow: rgba(88,166,255,0.2); --accent: #58a6ff; }
+  .card-op      { --glow: rgba(245,158,11,0.2); --accent: #f59e0b; }
+  .card-naruto  { --glow: rgba(249,115,22,0.2); --accent: #f97316; }
+  .card-db      { --glow: rgba(239,68,68,0.2);  --accent: #ef4444; }
+  .card-bc      { --glow: rgba(168,85,247,0.2); --accent: #a855f7; }
+  .card-bleach  { --glow: rgba(249,115,22,0.2); --accent: #f97316; }
 
   .card::after {
     content: '';
@@ -121,11 +122,12 @@
     font-size: 28px;
     box-shadow: 0 4px 20px var(--glow);
   }
-  .card-conan  .card-emoji { background: linear-gradient(135deg, #1f4e8c, #58a6ff); }
-  .card-op     .card-emoji { background: linear-gradient(135deg, #92400e, #f59e0b); }
-  .card-naruto .card-emoji { background: linear-gradient(135deg, #9a3412, #f97316); }
-  .card-db     .card-emoji { background: linear-gradient(135deg, #991b1b, #ef4444); }
-  .card-bc     .card-emoji { background: linear-gradient(135deg, #581c87, #a855f7); }
+  .card-conan   .card-emoji { background: linear-gradient(135deg, #1f4e8c, #58a6ff); }
+  .card-op      .card-emoji { background: linear-gradient(135deg, #92400e, #f59e0b); }
+  .card-naruto  .card-emoji { background: linear-gradient(135deg, #9a3412, #f97316); }
+  .card-db      .card-emoji { background: linear-gradient(135deg, #991b1b, #ef4444); }
+  .card-bc      .card-emoji { background: linear-gradient(135deg, #581c87, #a855f7); }
+  .card-bleach  .card-emoji { background: linear-gradient(135deg, #c2410c, #f97316); }
 
   .card-name {
     font-size: 13px; font-weight: 700; text-align: center;
@@ -199,14 +201,19 @@
       <span class="card-badge">41% Filler</span>
     </a>
 
+    <a class="card card-bleach" href="bleach-filler.html">
+      <div class="card-emoji">⚔️</div>
+      <div class="card-name">Bleach</div>
+      <div class="card-meta">366 Episodes<br>16 Seasons</div>
+      <span class="card-badge">45% Filler</span>
+    </a>
+
     <a class="card card-db" href="dragonball-filler.html">
       <div class="card-emoji">🐉</div>
       <div class="card-name">Dragon Ball</div>
       <div class="card-meta">153 Episodes<br>8 Arcs</div>
       <span class="card-badge">14% Filler</span>
     </a>
-
-
 
     <a class="card card-bc" href="blackclover-filler.html">
       <div class="card-emoji">🍀</div>
